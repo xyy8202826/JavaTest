@@ -19,15 +19,9 @@ public class SerializableTest {
         try {
             SerializableDTO serializableDTO = new SerializableDTO();
             serializableDTO.setAge(12);
-            //serializableDTO.setName("name");
-            serializableDTO.setChina(true);
-           // List<Car> cars = new ArrayList<Car>();
-            Car car = new Car();
-            car.setName("car1");
-            car.setPrice(2100L);
-            //cars.add(car);
-            //serializableDTO.setCar(car);
-            File file = new File("E:\\Study\\SerializableTest");
+            serializableDTO.setName("name");
+            //serializableDTO.setChina(true);
+            File file = new File("F:\\Study\\SerializableTest");
             if(file.exists()){
                 file.delete();
             }
@@ -40,7 +34,7 @@ public class SerializableTest {
 
     public static void readObject() {
         try {
-            File file = new File("E:\\Study\\SerializableTest");
+            File file = new File("F:\\Study\\SerializableTest");
             ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file));
             SerializableDTO serializableDTO = (SerializableDTO) ois.readObject();
             System.out.println(serializableDTO);

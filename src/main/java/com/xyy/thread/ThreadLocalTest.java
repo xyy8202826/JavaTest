@@ -12,7 +12,13 @@ public class ThreadLocalTest {
 
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
-   private static ThreadLocal<SimpleDateFormat> ts = new ThreadLocal<SimpleDateFormat>();
+   private static ThreadLocal<SimpleDateFormat> ts = new ThreadLocal<SimpleDateFormat>(){
+
+       @Override
+       protected SimpleDateFormat initialValue() {
+           return new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+       }
+   };
 
    public static void main(String [] args){
         //simpleDateFormatNotThreadLocal();
@@ -42,13 +48,10 @@ public class ThreadLocalTest {
 
     private static void simpleDateFormatThreadLocal(){
         ExecutorService es = Executors.newCachedThreadPool();
-        for(int i=0 ;i<1000 ;i++){
+        for(int i=0 ;i<10000 ;i++){
             es.execute(new Runnable() {
                 public void run() {
                     try {
-                        if(ts.get() == null){
-                            ts.set(new SimpleDateFormat("yyyy-MM-dd HH:mm:ss"));
-                        }
                         SimpleDateFormat sf = ts.get();
                         System.out.println(sf.parse("2017-11-12 15:25:20"));
                     } catch (ParseException e) {

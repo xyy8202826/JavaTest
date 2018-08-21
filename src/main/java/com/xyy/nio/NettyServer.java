@@ -1,7 +1,8 @@
 /**
  * Bestpay.com.cn Inc.
  * Copyright (c) 2011-2017 All Rights Reserved.
- */
+ *//*
+
 package com.xyy.nio;
 
 import org.jboss.netty.bootstrap.ServerBootstrap;
@@ -14,10 +15,7 @@ import org.jboss.netty.channel.socket.nio.NioServerSocketChannelFactory;
 import java.net.InetSocketAddress;
 import java.util.concurrent.*;
 
-/**
- * @author XYY
- * @version Id: NettyServer.java, v 0.1 2017/12/26 14:04 xuyuanye Exp $$
- */
+
 public class NettyServer {
 
     public static void main(String [] args){
@@ -34,4 +32,4 @@ public class NettyServer {
         });
         sbs.bind(new InetSocketAddress(8080));
     }
-}
+}*/

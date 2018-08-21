@@ -24,7 +24,6 @@ public class HelloServiceCgLib implements MethodInterceptor{
     }
 
     public Object getInstance(Object target){
-
         this.target=target;
         Enhancer enhancer = new Enhancer();
         enhancer.setSuperclass(this.target.getClass());

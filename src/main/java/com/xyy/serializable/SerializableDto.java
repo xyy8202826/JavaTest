@@ -10,19 +10,19 @@ import java.util.List;
  */
 public class SerializableDTO implements Serializable{
     private static final long serialVersionUID = -3019312668948463651L;
-    //private String name;
+    private String name;
     private String add;
     private int age;
     private boolean china;
-   // private Car car;
 
-    /*public String getName() {
+
+    public String getName() {
         return name;
     }
 
     public void setName(String name) {
         this.name = name;
-    }*/
+    }
 
     public int getAge() {
         return age;
@@ -39,15 +39,6 @@ public class SerializableDTO implements Serializable{
     public void setChina(boolean china) {
         this.china = china;
     }
-
- /*   public Car getCar() {
-        return car;
-    }
-
-    public void setCar(Car car) {
-        this.car = car;
-    }*/
-
     public String getAdd() {
         return add;
     }
@@ -59,11 +50,10 @@ public class SerializableDTO implements Serializable{
     @Override
     public String toString() {
         return "SerializableDTO{" +
-                //"name='" + name + '\'' +
+                "name='" + name + '\'' +
                 ", age=" + age +
                 ", add=" + add +
                 ", china=" + china +
-                //", Car=" + car +
                 '}';
     }
 }

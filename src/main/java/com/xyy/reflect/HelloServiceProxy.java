@@ -27,6 +27,11 @@ public class HelloServiceProxy implements InvocationHandler {
         HelloService proxy = (HelloService)Proxy.newProxyInstance(helloService.getClass().getClassLoader(),
                 helloService.getClass().getInterfaces(),helloServiceProxy);
         proxy.sayHello(" proxy");
+        System.out.println(helloService.getClass().getInterfaces().clone());
+        System.out.println(HelloServiceProxy.class.getClasses().clone());
+        System.out.println(HelloServiceProxy.class.getClasses());
+
+
     }
 
 }
