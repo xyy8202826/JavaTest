@@ -30,8 +30,6 @@ public class HelloServiceProxy implements InvocationHandler {
         System.out.println(helloService.getClass().getInterfaces().clone());
         System.out.println(HelloServiceProxy.class.getClasses().clone());
         System.out.println(HelloServiceProxy.class.getClasses());
-
-
     }
 
 }
